@@ -13,13 +13,15 @@ logger = logging.getLogger("mcp-atlassian")
 class SpacesMixin(ConfluenceClient):
     """Mixin for Confluence space operations."""
 
-    def get_spaces(self, start: int = 0, limit: int = 10) -> dict[str, object]:
+    def get_spaces(
+        self, start: int | None = 0, limit: int | None = 10
+    ) -> dict[str, object]:
         """
         Get all available spaces.
 
         Args:
-            start: The starting index for pagination
-            limit: Maximum number of spaces to return
+            start: The starting index for pagination (default: 0)
+            limit: Maximum number of spaces to return (default: 10)
 
         Returns:
             Dictionary containing space information with results and metadata

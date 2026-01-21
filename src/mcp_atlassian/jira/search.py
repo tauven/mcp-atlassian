@@ -22,8 +22,8 @@ class SearchMixin(JiraClient, IssueOperationsProto):
         self,
         jql: str,
         fields: list[str] | tuple[str, ...] | set[str] | str | None = None,
-        start: int = 0,
-        limit: int = 50,
+        start: int | None = 0,
+        limit: int | None = 50,
         expand: str | None = None,
         projects_filter: str | None = None,
     ) -> JiraSearchResult:

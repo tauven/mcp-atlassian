@@ -304,15 +304,15 @@ class ProjectsMixin(JiraClient, SearchOperationsProto):
             return 0
 
     def get_project_issues(
-        self, project_key: str, start: int = 0, limit: int = 50
+        self, project_key: str, start: int | None = 0, limit: int | None = 50
     ) -> JiraSearchResult:
         """
         Get issues for a specific project.
 
         Args:
             project_key: The project key
-            start: Index of the first issue to return
-            limit: Maximum number of issues to return
+            start: Index of the first issue to return (default: 0)
+            limit: Maximum number of issues to return (default: 50)
 
         Returns:
             List of JiraIssue models representing the issues

@@ -19,8 +19,8 @@ class BoardsMixin(JiraClient):
         board_name: str | None = None,
         project_key: str | None = None,
         board_type: str | None = None,
-        start: int = 0,
-        limit: int = 50,
+        start: int | None = 0,
+        limit: int | None = 50,
     ) -> list[dict[str, Any]]:
         """
         Get boards from Jira by name, project key, or type.
@@ -29,8 +29,8 @@ class BoardsMixin(JiraClient):
             board_name: The name of board, support fuzzy search
             project_key: Project key (e.g., PROJECT-123)
             board_type: Board type (e.g., scrum, kanban)
-            start: Start index
-            limit: Maximum number of boards to return
+            start: Start index (default: 0)
+            limit: Maximum number of boards to return (default: 50)
 
         Returns:
             List of board information
@@ -59,8 +59,8 @@ class BoardsMixin(JiraClient):
         board_name: str | None = None,
         project_key: str | None = None,
         board_type: str | None = None,
-        start: int = 0,
-        limit: int = 50,
+        start: int | None = 0,
+        limit: int | None = 50,
     ) -> list[JiraBoard]:
         """
         Get boards as JiraBoards model from Jira by name, project key, or type.
@@ -69,8 +69,8 @@ class BoardsMixin(JiraClient):
             board_name: The name of board, support fuzzy search
             project_key: Project key (e.g., PROJECT-123)
             board_type: Board type (e.g., scrum, kanban)
-            start: Start index
-            limit: Maximum number of boards to return
+            start: Start index (default: 0)
+            limit: Maximum number of boards to return (default: 10)
 
         Returns:
             List of JiraBoards model with board information

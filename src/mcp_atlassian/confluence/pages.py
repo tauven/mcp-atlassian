@@ -364,8 +364,8 @@ class PagesMixin(ConfluenceClient):
     def get_space_pages(
         self,
         space_key: str,
-        start: int = 0,
-        limit: int = 10,
+        start: int | None = 0,
+        limit: int | None = 10,
         *,
         convert_to_markdown: bool = True,
     ) -> list[ConfluencePage]:
@@ -374,8 +374,8 @@ class PagesMixin(ConfluenceClient):
 
         Args:
             space_key: The key of the space to get pages from
-            start: The starting index for pagination
-            limit: Maximum number of pages to return
+            start: The starting index for pagination (default: 0)
+            limit: Maximum number of pages to return (default: 10)
             convert_to_markdown: When True, returns content in markdown format,
                                otherwise returns raw HTML (keyword-only)
 

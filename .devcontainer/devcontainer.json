@@ -28,6 +28,13 @@
 				"ms-python.mypy-type-checker",
 				"charliermarsh.ruff"
 			]
+		},
+		"jetbrains": {
+			"plugins": [
+				"PythonCore",
+				"Pythonid",
+				"org.jetbrains.plugins.docker.gateway"
+			],
 		}
 	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

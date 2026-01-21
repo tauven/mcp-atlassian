@@ -61,8 +61,8 @@ class SearchOperationsProto(Protocol):
         | tuple[str, ...]
         | set[str]
         | None = "summary,description,status,assignee,reporter,labels,priority,created,updated,issuetype",
-        start: int = 0,
-        limit: int = 50,
+        start: int | None = 0,
+        limit: int | None = 50,
         expand: str | None = None,
         projects_filter: str | None = None,
     ) -> JiraSearchResult:

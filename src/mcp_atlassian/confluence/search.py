@@ -20,14 +20,14 @@ class SearchMixin(ConfluenceClient):
 
     @handle_atlassian_api_errors("Confluence API")
     def search(
-        self, cql: str, limit: int = 10, spaces_filter: str | None = None
+        self, cql: str, limit: int | None = 10, spaces_filter: str | None = None
     ) -> list[ConfluencePage]:
         """
         Search content using Confluence Query Language (CQL).
 
         Args:
             cql: Confluence Query Language string
-            limit: Maximum number of results to return
+            limit: Maximum number of results to return (default: 10)
             spaces_filter: Optional comma-separated list of space keys to filter by,
                 overrides config
 
@@ -97,14 +97,14 @@ class SearchMixin(ConfluenceClient):
 
     @handle_atlassian_api_errors("Confluence API")
     def search_user(
-        self, cql: str, limit: int = 10
+        self, cql: str, limit: int | None = 10
     ) -> list[ConfluenceUserSearchResult]:
         """
         Search users using Confluence Query Language (CQL).
 
         Args:
             cql: Confluence Query Language string for user search
-            limit: Maximum number of results to return
+            limit: Maximum number of results to return (default: 10)
 
         Returns:
             List of ConfluenceUserSearchResult models containing user search results

@@ -17,7 +17,11 @@ class SprintsMixin(JiraClient):
     """Mixin for Jira sprints operations."""
 
     def get_all_sprints_from_board(
-        self, board_id: str, state: str | None = None, start: int = 0, limit: int = 50
+        self,
+        board_id: str,
+        state: str | None = None,
+        start: int | None = 0,
+        limit: int | None = 50,
     ) -> list[dict[str, Any]]:
         """
         Get all sprints from a board.
@@ -49,7 +53,11 @@ class SprintsMixin(JiraClient):
             return []
 
     def get_all_sprints_from_board_model(
-        self, board_id: str, state: str | None = None, start: int = 0, limit: int = 50
+        self,
+        board_id: str,
+        state: str | None = None,
+        start: int | None = 0,
+        limit: int | None = 50,
     ) -> list[JiraSprint]:
         """
         Get all sprints as JiraSprint from a board.
